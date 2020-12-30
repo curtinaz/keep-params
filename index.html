@@ -20,7 +20,7 @@
 
 <body>
     <p>Botão para a página A:</p>
-    <a class="checkout" href="https://google.com/?pagode=sim">Botão</a>
+    <a class="checkout" href="https://google.com/">Botão</a>
     <a class="checkout" href="https://google.com/?pagodeira=29">Botão</a>
     <a class="checkout" href="https://google.com/?batestaca=ontem&gestores=brasileiros">Botão</a>
 
@@ -37,7 +37,7 @@
 
                 var checkout_url = document.querySelectorAll("a")[changing].href;
 
-                if (checkout_url.split("?") === undefined) {
+                if (checkout_url.split('?')[1] === undefined) {
                     document.querySelectorAll("a")[changing].href = checkout_url + "?" + param;
                 } else {
                     document.querySelectorAll("a")[changing].href = checkout_url + "&" + param;
