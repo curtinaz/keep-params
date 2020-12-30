@@ -31,14 +31,14 @@
         } else {
 
             var qtd_links = document.querySelectorAll("a").length;
-            var changing = 1;
+            var changing = 0;
 
-            for (changing = 1; changing <= qtd_links; changing++) {
+            for (changing = 0; changing <= qtd_links; changing++) {
 
-                var checkout_url[changing] = document.querySelectorAll("a")[changing].href;
-                var checkout_param[changing] = checkout_url[changing].split("?");
+                var checkout_url = document.querySelectorAll("a")[changing].href;
+                var checkout_param = checkout_url[changing].split("?");
 
-                if (checkout_param[chaning][1] === undefined) {
+                if (checkout_param[1] === undefined) {
                     document.querySelectorAll("a")[changing].href = checkout_url + "?" + param;
                 } else {
                     document.querySelectorAll("a")[changing].href = checkout_url + "&" + param;
