@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,25 +17,37 @@
         color: black;
     }
 </style>
+
 <body>
     <p>Botão para a página A:</p>
     <a class="checkout" href="https://google.com/">Botão</a>
+    <a class="checkout" href="https://google.com/">Botão</a>
+    <a class="checkout" href="https://google.com/">Botão</a>
 
     <script>
-        var param = location.search.slice(1);
+        let param = location.search.slice(1);
         if (param == "") {
-            var hasparam = true;
+            let hasparam = false;
         } else {
 
-        var checkout_url = document.querySelector(".checkout").href;
-        var checkout_param = checkout_url.split("?");
+            var qtd_links = document.querySelectorAll("a").length;
+            var changing = 1;
 
-        if (checkout_param[1] === undefined) {
-            document.querySelector(".checkout").href = checkout_url+"?"+param;
-        } else {
-            document.querySelector(".checkout").href = checkout_url+"&"+param;
-        }
+            for (changing = 1; changing <= qtd_links; changing++) {
+
+                var checkout_url[changing] = document.querySelectorAll("a")[changing].href;
+                var checkout_param[changing] = checkout_url[changing].split("?");
+
+                if (checkout_param[chaning][1] === undefined) {
+                    document.querySelectorAll("a")[changing].href = checkout_url + "?" + param;
+                } else {
+                    document.querySelectorAll("a")[changing].href = checkout_url + "&" + param;
+                }
+
+            }
+
         }
     </script>
 </body>
+
 </html>
