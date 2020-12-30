@@ -18,12 +18,23 @@
 </style>
 <body>
     <p>Botão para a página A:</p>
-    <a class="checkout" href="#">Botão</a>
+    <a class="checkout" href="https://google.com/">Botão</a>
 
     <script>
         var param = location.search.slice(1);
-        var checkout_url = document.querySelector(".checkout").href
-        document.querySelector(".checkout").href=`$(checkout_url)&$(param)`
+        if (param == "") {
+            var hasparam = true;
+        } else {
+
+        var checkout_url = document.querySelector(".checkout").href;
+        var checkout_param = checkout_url.split("?");
+
+        if (checkout_param[1] === undefined) {
+            document.querySelector(".checkout").href = checkout_url+"?"+param;
+        } else {
+            document.querySelector(".checkout").href = checkout_url+"&"+param;
+        }
+        }
     </script>
 </body>
 </html>
