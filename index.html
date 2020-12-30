@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Req Params</title>
 </head>
+<style>
+    a {
+        padding: 5px;
+        border-radius: 2px;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        text-decoration: none;
+        color: black;
+    }
+</style>
 <body>
     <p>Botão para a página A:</p>
-    <button href="#">Teste</button>
+    <a class="checkout" href="#">Botão</a>
+
+    <script>
+        var param = location.search.slice(1);
+        var checkout_url = document.querySelector(".checkout").href
+        document.querySelector(".checkout").href=`$(checkout_url)&$(param)`
+    </script>
 </body>
 </html>
